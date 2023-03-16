@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
- *main - this is the main begining of the code
- *puts - this function is used to apply strings
- *return - the retun value is zero
+ * main - Entry point
+ *
+ * Return: always 0
  */
 int main(void)
 {
