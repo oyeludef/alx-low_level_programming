@@ -7,6 +7,7 @@
   * Return: last digits
   *
   */
+
 int print_last_digit(int n)
 {
 	int l;
@@ -19,6 +20,8 @@ int print_last_digit(int n)
 
 	}
 	else
+	{
 		_putchar(l + 48);
 		return (l);
+	}
 }
