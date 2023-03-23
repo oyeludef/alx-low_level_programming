@@ -9,8 +9,6 @@
   */
 int _isupper(int c)
 {
-	char c;
-
 	if (c >= 65 && c <= 90)
 	{
 		_putchar(c);
@@ -20,6 +18,6 @@ int _isupper(int c)
 	{
 		return (0);
 	}
-	_purchar('\n');
+	_putchar('\n');
 
 }
