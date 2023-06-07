@@ -1,14 +1,17 @@
 #include "main.h"
 /**
- * factorial - gives factorial of number
- * @n: number to use
- * Return: returns factor or -1
+ * _pow_recursion - gives power of int
+ * @x: integer to power
+ * @y: power to do
+ * Return: integer value
  */
-int factorial(int n)
+int _pow_recursion(int x, int y)
 {
-	if (n < 0)
+	if (y < 0)
 		return (-1);
-	if (n > 0)
-		return (n * factorial(n - 1));
+	if (y > 0)
+	{
+		return (x * _pow_recursion(x, y - 1));
+	}
 	return (1);
 }
