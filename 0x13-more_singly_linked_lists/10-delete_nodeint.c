@@ -1,35 +1,38 @@
 #include "lists.h"
-
 /**
- * delete_nodeint_at_index - Function that delete a nodo
- * @head: nodo head
- * @index: index
- * Return: integer
+ * delete_nodeint_at_index - deletes a node
+ * @head: linked list at head
+ * @index: index of deleted node
+ * Return: boolean
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	unsigned int i = 0;
-	listint_t *actual = *head;
-	listint_t *nodo;
+	listint_t *tmp, *_delete;
+	unsigned int count = 0;
 
-	if (!*head)
+	tmp = *head;
+	if (*head == NULL)
 		return (-1);
 	if (index == 0)
 	{
-		nodo = *head;
-		*head = (*head)->next;
-		free(actual);
+		tmp = tmp->next;
+		free(*head);
+		*head = tmp;
 		return (1);
 	}
-	while (actual)
+	else
 	{
-		if (i  == index - 1)
+		while (tmp != NULL && count != index - 1)
 		{
-			nodo = actual->next;
-			actual->next = nodo->next;
-			free(nodo);
-			return (1);
+			count++;
+			tmp = tmp->next;
 		}
-		actual = actual->next, i++;
+		if (count != index - 1)
+			return (-1);
+		_delete = tmp->next;
+		tmp->next = tmp->next->next;
+		free(_delete);
+		return (1);
 	}
-	return (-1);
+
+}
